@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.viplantchecker.FabBottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemTextColor="@drawable/selectors"
+        app:labelVisibilityMode="labeled"
+        app:fab_cradle_margin="4dp"
+        app:fab_cradle_rounded_corner_radius="4dp"
+        app:fab_size="70dp"
+        app:itemIconTint="@drawable/selectors"
+        app:menu="@menu/menu_bottom_navigation" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:fabCustomSize="71dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_camera_white"
+        app:layout_anchor="@id/bottomNavigationView"
+        app:layout_anchorGravity="fill_vertical|center_horizontal"
+        app:elevation="16dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
